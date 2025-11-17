@@ -13,7 +13,7 @@ import { theme } from './shared/themes/theme'
 type TScreenDefinitions = {
   home?: { newName: string } | undefined
   setusername: undefined
-  detail: { rate: number }
+  detail: { rate: number, id?: string }
 }
 
 const Stack = createNativeStackNavigator<TScreenDefinitions>()
@@ -62,7 +62,7 @@ export const AppRoutes = () => {
             name='detail'
             component={Detail}
             options={{
-              sheetAllowedDetents: [0.8, 0.95],
+              sheetAllowedDetents: [0.8],
             }}
           />
           <Stack.Screen
