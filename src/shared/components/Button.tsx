@@ -1,19 +1,20 @@
-
-import { Pressable, StyleSheet, Text } from "react-native"
-import { theme } from "../themes/theme"
-
+import { Pressable, StyleSheet, Text } from 'react-native'
+import { theme } from '../themes/theme'
 
 interface IButtonProps {
   title?: string
-  children? :React.ReactNode
-  onPress?: ()=> void
+  children?: React.ReactNode
+  onPress?: () => void
 }
-export const Button = ({children, title, onPress}:IButtonProps)=>{
-  return(
+export const Button = ({ children, title, onPress }: IButtonProps) => {
+  return (
     <Pressable
-      style={({pressed})=> ({...styles.button, ...(pressed ? styles.buttonPressed : {})})}
+      style={({ pressed }) => ({
+        ...styles.button,
+        ...(pressed ? styles.buttonPressed : {}),
+      })}
       onPress={onPress}
-      >
+    >
       {children}
       {!children && <Text style={styles.buttonTitle}>{title}</Text>}
     </Pressable>
@@ -26,8 +27,8 @@ const styles = StyleSheet.create({
     borderRadius: 8,
     backgroundColor: theme.colors.primary,
 
-    alignItems: "center",
-    justifyContent: "center",
+    alignItems: 'center',
+    justifyContent: 'center',
   },
   buttonPressed: {
     opacity: 0.5,
@@ -37,4 +38,4 @@ const styles = StyleSheet.create({
     fontFamily: theme.family.regular,
     fontSize: theme.fonts.body,
   },
-});
+})

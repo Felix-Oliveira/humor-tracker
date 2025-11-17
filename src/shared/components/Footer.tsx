@@ -1,19 +1,20 @@
-import { StyleSheet, Text, View } from "react-native";
-import { theme } from "../themes/theme";
-import { useSafeAreaInsets } from "react-native-safe-area-context";
+import { StyleSheet, Text, View } from 'react-native'
+import { theme } from '../themes/theme'
+import { useSafeAreaInsets } from 'react-native-safe-area-context'
 
-
-interface IFooterProps  {
+interface IFooterProps {
   children: React.ReactNode
 }
-export const Footer = ({ children  }: IFooterProps) => {
+export const Footer = ({ children }: IFooterProps) => {
   const insets = useSafeAreaInsets()
   return (
-    <View style={{...styles.footerContainer, paddingBottom: insets.bottom + 16}}>
+    <View
+      style={{ ...styles.footerContainer, paddingBottom: insets.bottom + 16 }}
+    >
       {children}
     </View>
-  );
-};
+  )
+}
 
 const styles = StyleSheet.create({
   footerContainer: {
@@ -24,4 +25,4 @@ const styles = StyleSheet.create({
     borderTopLeftRadius: 24,
     ...theme.shadows.default,
   },
-});
+})
